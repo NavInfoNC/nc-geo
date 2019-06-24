@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{76049b26-0088-4aa2-8eb0-5aaac969f276}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test">
+      <UniqueIdentifier>{ced487ff-fd95-4e75-9fa5-3a4d3fcd8701}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="test\cq_algorithm_unittest.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="test\cq_hashmap_unittest.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="test\cq_vector_unittest.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="test\main.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="test\mutable_polygon_unittest.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="test\polygon_marker_unittest.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="test\polygon_merger_unittest.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="test\polygon_tile_splitter_unittest.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="test\polyline_polygon_splitter_unittest.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="test\polyline_tile_splitter_unittest.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="test\small_object_allocator_unittest.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="test\gtest\gtest-all.cc">
+      <Filter>test</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mutable_polygon.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\polygon_marker.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\polygon_merger.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\polygon_tile_splitter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\polyline_polygon_splitter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\polyline_tile_splitter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\static_polygon.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="test\gtest\gtest.h">
+      <Filter>test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\basic_types.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cq_algorithm.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cq_hashmap.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cq_heap.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cq_vector.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\mutable_polygon.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\polygon_marker.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\polygon_merger.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\polygon_tile_splitter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\polyline_polygon_splitter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\polyline_tile_splitter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\small_object_allocator.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\static_polygon.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
