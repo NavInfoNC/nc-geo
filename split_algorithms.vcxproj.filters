@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{ad819d47-b3ab-429c-96a3-39eafa06a4d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="container">
+      <UniqueIdentifier>{506f506b-f594-48e6-81ca-b25bb39966e7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\stdafx.h" />
+    <ClInclude Include="include\basic_types.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="include\split_algorithms\cq_algorithm.h">
+      <Filter>container</Filter>
+    </ClInclude>
+    <ClInclude Include="include\split_algorithms\cq_hashmap.h">
+      <Filter>container</Filter>
+    </ClInclude>
+    <ClInclude Include="include\split_algorithms\cq_heap.h">
+      <Filter>container</Filter>
+    </ClInclude>
+    <ClInclude Include="include\split_algorithms\cq_vector.h">
+      <Filter>container</Filter>
+    </ClInclude>
+    <ClInclude Include="include\split_algorithms\small_object_allocator.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="include\split_algorithms\static_polygon.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="include\split_algorithms\mutable_polygon.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="include\split_algorithms\polygon_marker.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="include\split_algorithms\polygon_merger.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="include\split_algorithms\polygon_tile_splitter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="include\split_algorithms\polyline_polygon_splitter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="include\split_algorithms\polyline_tile_splitter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\stdafx.cpp" />
+    <ClCompile Include="src\static_polygon.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mutable_polygon.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\polygon_marker.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\polygon_merger.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\polygon_tile_splitter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\polyline_polygon_splitter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\polyline_tile_splitter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
