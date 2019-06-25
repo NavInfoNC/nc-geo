@@ -35,7 +35,6 @@
     <ClInclude Include="src\basic_types.h" />
     <ClInclude Include="src\cq_algorithm.h" />
     <ClInclude Include="src\cq_hashmap.h" />
-    <ClInclude Include="src\cq_heap.h" />
     <ClInclude Include="src\cq_vector.h" />
     <ClInclude Include="src\mutable_polygon.h" />
     <ClInclude Include="src\polygon_marker.h" />

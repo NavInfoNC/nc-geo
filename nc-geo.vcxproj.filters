@@ -80,9 +80,6 @@
     <ClInclude Include="src\cq_hashmap.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\cq_heap.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="src\cq_vector.h">
       <Filter>src</Filter>
     </ClInclude>
