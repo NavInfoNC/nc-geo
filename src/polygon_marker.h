@@ -29,22 +29,6 @@ SOFTWARE.
 
 class StaticPolygon;
 
-// Each MarkPoint has a levelStride, which means the point is visible in level range [maxZoomLevel - levelStride, maxZoomLevel].
-struct MarkPoint
-{
-	union
-	{
-		Point pos;
-		struct  
-		{
-			int x;
-			int y;
-		};
-	};
-
-	int level;	// 0 means the base level. The point is visible from 0 to |level|, inclusive.
-};
-
 /**
 	@brief Find suitable positions to add label text within a polygon.
 */
@@ -94,7 +78,6 @@ protected:
 private:
 	CellVector m_candidatesA;
 	CellVector m_candidatesB;
-	Vector<MarkPoint> m_outputMarkPoints;
 	Cell* m_bestCell;
 
 	int m_precision;

@@ -1,5 +1,6 @@
 #include "gtest/gtest.h"
 #include "polygon_tile_splitter.h"
+#include <stdio.h>
 
 TEST(PolygonTileSplitter, basic)
 {
@@ -130,3 +131,47 @@ TEST(PolygonTileSplitter, deadLoop)
 
 	delete splitter;
 }
+
+//class PolygonTileSplitterPerformanceTest : public testing::Test
+//{
+//public:
+//	virtual void SetUp() override
+//	{
+//		FILE* pF;
+//		fopen_s(&pF, "data/china.mif", "r");
+//
+//		char buffer[128];
+//		fgets(buffer, 128, pF);
+//
+//		int count = atoi(buffer);
+//		Point* pts = new Point[count];
+//
+//		count = 0;
+//		while (fgets(buffer, 128, pF))
+//		{
+//			pts[count].x = int(atof(buffer) * 1e5);
+//			pts[count].y = int(atof(strchr(buffer, ' ') + 1) * 1e5);
+//			count++;
+//		}
+//		m_polygon.initWithPoints(pts, count);
+//		delete pts;
+//		fclose(pF);
+//	}
+//	virtual void TearDown() override
+//	{
+//
+//	}
+//
+//protected:
+//	StaticPolygon m_polygon;
+//};
+//
+//TEST_F(PolygonTileSplitterPerformanceTest, performance)
+//{
+//	PolygonTileSplitter* splitter = new PolygonTileSplitter();
+//	splitter->setTileSize(1000);
+//	int count;
+//	splitter->split(&m_polygon, &count);
+//
+//	delete splitter;
+//}
