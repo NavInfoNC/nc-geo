@@ -1,5 +1,5 @@
 Introduction
-============
+------------
 
 **nc-geo** is a collection of algorithms for geometry processing(Polygon splitting, finding the largest circle in a polygon, etc.) used in NaviCore team. 
 We implement some generic containers to make it more efficient.
