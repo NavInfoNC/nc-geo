@@ -10,7 +10,7 @@ Features
 * Well designed and easy to use.
 * Very efficient.
 
- 	For instance. ``PolygonTileSplitter`` can split the whole china's polygon (19893 points) by approximate 1 square km tiles in lesss than 2 seconds, resulting more than 9500000 polygons. It's serveral hundred times faster than GPC.
+ 	For instance. ``PolygonTileSplitter`` can split the whole China's polygon (19893 points) by approximate 1 square km tiles in lesss than 2 seconds, resulting more than 9500000 polygons. It's serveral hundred times faster than GPC.
 
 * Highly readable source code.
 
