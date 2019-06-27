@@ -3,10 +3,6 @@ NC-GEO
 
 **nc-geo** is a collection of super-fast algorithms for geometry processing(Polygon splitting, finding the largest circle in a polygon, etc.)
 
-.. contents::
-   :local:
-   :depth: 1
-
 Features
 --------
 
