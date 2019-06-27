@@ -27,6 +27,9 @@ Polygon/polyline algorithms
 ...........................
 
 * `PolygonTileSplitter` - Split polygon by equal-sized grids.
+.. image:: docs/splitChina.png
+   :width: 800px
+   :align: left
 * `PolylineTileSplitter` - Split polyline by equal-sized grids.
 * `PolylinePolygonSplitter` - Split polyline into segments with a given polygon.
 * `PolygonMarker` - Find the largest inscribed circle in polygon.
