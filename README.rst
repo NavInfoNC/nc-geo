@@ -27,25 +27,35 @@ Polygon/polyline algorithms
 ...........................
 
 * `PolygonTileSplitter` - Split polygon by equal-sized grids.
-.. image:: docs/splitChina_sparse.png
-   :width: 600px
-   :align: left
+
+  .. image:: docs/splitChina_sparse.png
+     :width: 400px
+     :align: left
+
 * `PolylineTileSplitter` - Split polyline by equal-sized grids.
-.. image:: docs/line_tile_result_with_grid.png
-   :width: 600px
-   :align: left
+
+  .. image:: docs/line_tile_result_with_grid.png
+     :width: 400px
+     :align: left
+
 * `PolylinePolygonSplitter` - Split polyline into segments with a given polygon.
-.. image:: docs/polyline_polygon_splitter.png
-   :width: 600px
-   :align: left
+
+  .. image:: docs/polyline_polygon_splitter.png
+     :width: 400px
+     :align: left
+
 * `PolygonMarker` - Find the largest inscribed circle in polygon.
-.. image:: docs/polygon_marker_circle.png
-   :width: 600px
-   :align: left
+
+  .. image:: docs/polygon_marker_circle.png
+     :width: 400px
+     :align: left
+
 * `PolygonMerger` - Given a set of polygons, remove their common edges(exactly same edge).
-.. image:: docs/merge_result.png
-   :width: 1024px
-   :align: left
+
+  .. image:: docs/merge_result.png
+     :width: 400px
+     :align: left
+
 Generic containers and utilities
 ................................
 
