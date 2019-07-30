@@ -1,0 +1,13 @@
+language: cpp
+dist: bionic
+compiler:
+  - clang
+os:
+  - linux
+notifications:
+  email: false
+before_install:
+  - echo $LANG
+  - echo $LC_ALL
+script:
+  - ls .
