@@ -22,8 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 #pragma once
-#include <hash_map>
-#include <hash_set>
+#include <vector>
+#include <unordered_set>
+#include <unordered_map>
 #include "basic_types.h"
 
 class StaticPolygon;
@@ -66,7 +67,7 @@ protected:
 		return false;
 	}
 
-	struct PointHasher : stdext::hash_compare<Point>
+	struct PointHasher
 	{
 		size_t operator()(const Point& pt) const
 		{
@@ -78,9 +79,10 @@ protected:
 		}
 	};
 
+	
+	typedef std::unordered_set<Point, PointHasher> PointSet;
+	typedef std::unordered_map<Point, PointSet, PointHasher> SegmentSet;
 	typedef std::vector<Point> Contour;
-	typedef stdext::hash_set<Point, PointHasher> PointSet;
-	typedef stdext::hash_map<Point, PointSet, PointHasher> SegmentSet;
 
 private:
 	SegmentSet m_segments;

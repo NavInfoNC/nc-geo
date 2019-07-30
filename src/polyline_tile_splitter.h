@@ -32,9 +32,6 @@ typedef void(*SplitResultCallback)(const Point* points, size_t n, void* userData
 class LineSplitter
 {
 public:
-	enum Position;
-
-public:
 	LineSplitter();
 	~LineSplitter();
 
@@ -44,6 +41,19 @@ public:
 	void _reservePoints(size_t newSize);
 
 private:
+	enum Position
+	{
+		Position_none = 0,
+		Position_left = 1,	///< 0001
+		Position_right = 2,	///< 0010
+		Position_top = 8,	///< 1000
+		Position_bottom = 4,	///< 0100
+		Position_topLeft = 9,	///< 1001
+		Position_topRight = 10,	///< 1010
+		Position_bottomLeft = 5,	///< 0101
+		Position_bottomRight = 6		///< 0110
+	};
+
 	Position getRelativeGridPos(GridId targetGridId, GridId baseGridId);
 	GridId generateGridId(GridId currentGridId, const Point *p, Position nextPointPosition);
 	Position testPointOnEdge(const Point *p, GridId gridId);

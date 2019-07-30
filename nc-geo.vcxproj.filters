@@ -12,9 +12,6 @@
     <ClCompile Include="test\cq_algorithm_unittest.cpp">
       <Filter>test</Filter>
     </ClCompile>
-    <ClCompile Include="test\cq_hashmap_unittest.cpp">
-      <Filter>test</Filter>
-    </ClCompile>
     <ClCompile Include="test\cq_vector_unittest.cpp">
       <Filter>test</Filter>
     </ClCompile>
@@ -75,9 +72,6 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="src\cq_algorithm.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\cq_hashmap.h">
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="src\cq_vector.h">

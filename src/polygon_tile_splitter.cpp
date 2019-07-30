@@ -114,7 +114,7 @@ static bool NodePV_less(const Node& l, const Node& r)
 			}
 			else
 			{
-				__int64 crossProduct;
+				int64 crossProduct;
 				if (p1->x == p2->x && p1->x == b->x && ((p1->y - b->y > 0) ^ (p2->y - b->y > 0)))
 				{
 					crossProduct = p1->y < p2->y ? 1 : -1;
@@ -123,7 +123,7 @@ static bool NodePV_less(const Node& l, const Node& r)
 				}
 				else
 				{
-					crossProduct = __int64(p2->y - p1->y)*(b->x - p1->x) - __int64(b->y - p1->y)*(p2->x - p1->x);
+					crossProduct = int64(p2->y - p1->y)*(b->x - p1->x) - int64(b->y - p1->y)*(p2->x - p1->x);
 					if (!isLeft)
 						crossProduct = -crossProduct;
 				}
@@ -137,8 +137,8 @@ static bool NodePV_less(const Node& l, const Node& r)
 				}
 				else
 				{
-					if (__int64(p1->x - b->x) * (p1->x - b->x) + __int64(p1->y - b->y) * (p1->y - b->y)
-						< __int64(p2->x - b->x) * (p2->x - b->x) + __int64(p2->y - b->y) * (p2->y - b->y))
+					if (int64(p1->x - b->x) * (p1->x - b->x) + int64(p1->y - b->y) * (p1->y - b->y)
+						< int64(p2->x - b->x) * (p2->x - b->x) + int64(p2->y - b->y) * (p2->y - b->y))
 					{
 						MOVE_NEXT(p1);
 					}
@@ -198,7 +198,7 @@ static bool NodePH_less(const Node& l, const Node& r)
 			}
 			else
 			{
-				__int64 crossProduct;
+				int64 crossProduct;
 				if (p1->y == p2->y && p1->y == b->y && ((p1->x - b->x > 0) ^ (p2->x - b->x > 0)))
 				{
 					crossProduct = p1->x < p2->x ? 1 : -1;
@@ -207,7 +207,7 @@ static bool NodePH_less(const Node& l, const Node& r)
 				}
 				else
 				{
-					crossProduct = __int64(p2->y - p1->y)*(b->x - p1->x) - __int64(b->y - p1->y)*(p2->x - p1->x);
+					crossProduct = int64(p2->y - p1->y)*(b->x - p1->x) - int64(b->y - p1->y)*(p2->x - p1->x);
 					if (!isLeft)
 						crossProduct = -crossProduct;
 				}
@@ -221,8 +221,8 @@ static bool NodePH_less(const Node& l, const Node& r)
 				}
 				else
 				{
-					if (__int64(p1->x - b->x) * (p1->x - b->x) + __int64(p1->y - b->y) * (p1->y - b->y)
-						< __int64(p2->x - b->x) * (p2->x - b->x) + __int64(p2->y - b->y) * (p2->y - b->y))
+					if (int64(p1->x - b->x) * (p1->x - b->x) + int64(p1->y - b->y) * (p1->y - b->y)
+						< int64(p2->x - b->x) * (p2->x - b->x) + int64(p2->y - b->y) * (p2->y - b->y))
 					{
 						MOVE_NEXT(p1);
 					}
@@ -294,9 +294,9 @@ static void _splitVertical(StaticPolygon& poly, int x, MutablePolygon& result1, 
 				Point intersection;
 				intersection.x = x;
 				if (p1->x < p2->x)
-					intersection.y = p1->y + (__int64)(p2->y - p1->y) * (x - p1->x) / (p2->x - p1->x);
+					intersection.y = p1->y + (int64)(p2->y - p1->y) * (x - p1->x) / (p2->x - p1->x);
 				else
-					intersection.y = p2->y + (__int64)(p1->y - p2->y) * (x - p2->x) / (p1->x - p2->x);
+					intersection.y = p2->y + (int64)(p1->y - p2->y) * (x - p2->x) / (p1->x - p2->x);
 				result1.addUniquePoint(intersection);
 				result2.addUniquePoint(intersection);
 			}
@@ -392,9 +392,9 @@ static void _splitHorizontal(StaticPolygon& poly, int y, MutablePolygon& result1
 				Point intersection;
 				intersection.y = y;
 				if (p1->y < p2->y)
-					intersection.x = p1->x + (__int64)(p2->x - p1->x) * (y - p1->y) / (p2->y - p1->y);
+					intersection.x = p1->x + (int64)(p2->x - p1->x) * (y - p1->y) / (p2->y - p1->y);
 				else
-					intersection.x = p2->x + (__int64)(p1->x - p2->x) * (y - p2->y) / (p1->y - p2->y);
+					intersection.x = p2->x + (int64)(p1->x - p2->x) * (y - p2->y) / (p1->y - p2->y);
 				result1.addUniquePoint(intersection);
 				result2.addUniquePoint(intersection);
 			}
@@ -640,7 +640,7 @@ private:
 
 			size_t nodeNum = m_nodes.size();
 
-			size_t* arr = (size_t*)_alloca(sizeof(size_t) * nodeNum);
+			size_t* arr = (size_t*)alloca(sizeof(size_t) * nodeNum);
 			for (size_t i = 0; i < nodeNum; i++)
 			{
 				arr[m_nodes.at(i).index] = i;

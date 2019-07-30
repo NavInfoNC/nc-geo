@@ -41,7 +41,7 @@ int64 Polygon_calculateArea(Point* pts, size_t pointNum)
 
 void StaticPolygon::initWithPointsNoCopy(Point* points, int n)
 {
-	CQ_ASSERT(m_points == NULL);
+	assert(m_points == NULL);
 	m_points = points;
 	m_pointNumber = n;
 	m_isPointsCopied = false;
@@ -49,7 +49,7 @@ void StaticPolygon::initWithPointsNoCopy(Point* points, int n)
 
 void StaticPolygon::initWithPoints(const Point* points, int pointNum)
 {
-	CQ_ASSERT(m_points == NULL);
+	assert(m_points == NULL);
 	size_t size = pointNum * sizeof(Point);
 	m_points = (Point*)malloc(size);
 	memcpy(m_points, points, size);
@@ -58,7 +58,7 @@ void StaticPolygon::initWithPoints(const Point* points, int pointNum)
 
 void StaticPolygon::initWithReversedPoints(const Point* points, int n)
 {
-	CQ_ASSERT(m_points == NULL);
+	assert(m_points == NULL);
 	size_t size = n * sizeof(Point);
 	m_points = (Point*)malloc(size);
 	for (int i = 0; i < n; i++)
@@ -70,7 +70,7 @@ void StaticPolygon::initWithReversedPoints(const Point* points, int n)
 
 void StaticPolygon::initWithGrid(int x, int y, int gridSize)
 {
-	CQ_ASSERT(m_points == NULL);
+	assert(m_points == NULL);
 
 	m_boundingBox.left = x * gridSize;
 	m_boundingBox.top = y * gridSize;

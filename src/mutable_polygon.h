@@ -45,8 +45,8 @@ public:
 
 	forceinline void clear() { m_pointNumber = 0; Rect_invalidate(&m_boundingBox); }
 
-	void removeFirstPoint() { CQ_ASSERT(m_pointNumber != 0); memmove(m_points, m_points + 1, sizeof(Point) * (m_pointNumber - 1)); m_pointNumber--; updateBBox(); }
-	void removeLastPoint() { CQ_ASSERT(m_pointNumber != 0); m_pointNumber--; updateBBox(); }
+	void removeFirstPoint() { assert(m_pointNumber != 0); memmove(m_points, m_points + 1, sizeof(Point) * (m_pointNumber - 1)); m_pointNumber--; updateBBox(); }
+	void removeLastPoint() { assert(m_pointNumber != 0); m_pointNumber--; updateBBox(); }
 	void removeDuplicatedPoints();
 
 private:

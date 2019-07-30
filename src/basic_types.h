@@ -32,6 +32,7 @@ SOFTWARE.
 #	include <math.h>
 #	include <stddef.h>
 #	include <stdarg.h>
+#   include <assert.h>
 
 typedef int int32;
 typedef unsigned int uint32;
@@ -266,7 +267,6 @@ return rtn;
 */
 #define NC_ATTRIBUTES(...)
 
-#define CQ_ASSERT(o) { if (!(o)) { *((int*)(0)) = 0; }}
 #ifndef element_of
 #define element_of(o) (sizeof(o) / sizeof((o)[0]))
 #endif
