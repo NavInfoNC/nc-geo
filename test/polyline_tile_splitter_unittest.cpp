@@ -92,7 +92,7 @@ TEST(LineSplitter, splitByNdsTile)
 		EXPECT_EQ((i + 1) * 100, newLines[i]->m_points[1].y);
 	}
 
-	for each(Line* line in newLines)
+	for(Line* line : newLines)
 	{
 		delete line;
 	}

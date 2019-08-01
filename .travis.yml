@@ -10,4 +10,7 @@ before_install:
   - echo $LANG
   - echo $LC_ALL
 script:
-  - ls .
+  - mkdir build && cd build
+  - cmake ..
+  - make
+  - make test

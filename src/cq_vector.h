@@ -166,7 +166,7 @@ public:
 	}
 
 	void popBack() {
-		CQ_ASSERT(this->m_size != 0); 
+		assert(this->m_size != 0); 
 		if (!std::is_pod<ValueType>::value)
 			this->m_cvector[this->m_size - 1].~ValueType();
 		this->m_size--;
@@ -181,7 +181,7 @@ public:
 	}
 
 	forceinline ValueType& at(size_t i) {
-		CQ_ASSERT(this->m_size > i);
+		assert(this->m_size > i);
 		return this->m_cvector[i];
 	}
 
@@ -277,7 +277,7 @@ public:
 		this->m_cvector = (ValueType*)realloc(this->m_cvector, newSize * sizeof(ValueType));
 		if (this->m_cvector == NULL)
 		{
-			CQ_ASSERT(false && "Vector::reserve, realloc returns NULL");
+			assert(false && "Vector::reserve, realloc returns NULL");
 			return;
 		}
 		m_reservedSize = newSize;

@@ -26,9 +26,21 @@ protected:
 	if (ptsCount1 != ptsCount)
 		return ::testing::AssertionFailure();
 
+	int startIdx = -1;
+
+	for (; startIdx < ptsCount; startIdx++)
+	{
+		if (pts1[startIdx] == pts[0])
+			break;
+	}
+
+	if (startIdx == -1)
+		return ::testing::AssertionFailure();
+
 	for (int i = 0; i < ptsCount; i++)
 	{
-		if (pts[i].x != pts1[i].x || pts[i].y != pts1[i].y)
+		int polyIdx = (startIdx + i) % ptsCount;
+		if (pts[i].x != pts1[polyIdx].x || pts[i].y != pts1[polyIdx].y)
 			return ::testing::AssertionFailure();
 	}
 
@@ -63,12 +75,12 @@ TEST_F(PolygonMergerTest, basic)
 	EXPECT_EQ(resultNum, 1);
 
 	Point ptsResult[] = {
-		{100, 100},
-		{100, 200},
 		{200, 200},
 		{300, 200},
 		{300, 100},
 		{200, 100},
+		{100, 100},
+		{100, 200},
 	};
 	EXPECT_TRUE(isPolygonEqual(result[0], ptsResult, 6));
 }
@@ -76,7 +88,8 @@ TEST_F(PolygonMergerTest, basic)
 TEST_F(PolygonMergerTest, withHole)
 {
 	Point pts1[] = { 
-		Point_make(10, 20), 
+		Point_make(10, 10), 
+		Point_make(30, 10),
 		Point_make(30, 20),
 		Point_make(25, 25),
 		Point_make(30, 30),
@@ -86,7 +99,8 @@ TEST_F(PolygonMergerTest, withHole)
 
 	Point pts2[] = {
 		Point_make(30, 20), 
-		Point_make(50, 20),
+		Point_make(30, 10),
+		Point_make(50, 10),
 		Point_make(50, 40),
 		Point_make(30, 40),
 		Point_make(30, 30),
@@ -94,8 +108,8 @@ TEST_F(PolygonMergerTest, withHole)
 	};
 
 	StaticPolygon p1, p2;
-	p1.initWithPointsNoCopy(pts1, 6);
-	p2.initWithPointsNoCopy(pts2, 6);
+	p1.initWithPointsNoCopy(pts1, 7);
+	p2.initWithPointsNoCopy(pts2, 7);
 	std::vector<StaticPolygon*> polys;
 	polys.push_back(&p1);
 	polys.push_back(&p2);
@@ -105,12 +119,12 @@ TEST_F(PolygonMergerTest, withHole)
 	EXPECT_EQ(resultNum, 2);
 	
 	Point resultPts1[] = {
-		{10, 20},
-		{30, 20},
-		{50, 20},
+		{50, 10},
 		{50, 40},
 		{30, 40},
 		{10, 40},
+		{10, 10},
+		{30, 10},
 	};
 
 	Point resultPts2[] = {

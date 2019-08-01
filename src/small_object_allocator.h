@@ -59,7 +59,7 @@ public:
 		size_t index = m_objNum % m_poolSlotSize;
 
 		// actualy num shoule < m_poolSlotSize / 3
-		_ASSERT(num <= m_poolSlotSize);
+		assert(num <= m_poolSlotSize);
 		if ((m_objNum + num) >= m_pool.size() * m_poolSlotSize)
 		{
 			// push obj in slot not used to free list.
@@ -103,7 +103,7 @@ public:
 
 	void freeAllObjects()
 	{
-		for each(T* slot in m_pool)
+		for(T* slot : m_pool)
 		{
 			delete[] slot;
 		}
@@ -150,9 +150,6 @@ private:
 	static Allocator* m_instance;
 };
 
-
-// selectany 通知编译器，.h中此变量被多次include时，只保留一份
-// 不过static变量或许不需要
 template<typename T>
-__declspec(selectany) FixedObjectAllocator<T>* FixedObjectAllocator<T>::m_instance = NULL;
+FixedObjectAllocator<T>* FixedObjectAllocator<T>::m_instance = NULL;
 

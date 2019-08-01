@@ -1,6 +1,7 @@
 NC-GEO
 ======
 
+.. image:: https://travis-ci.com/NavInfoNC/nc-geo.svg?branch=master
 **nc-geo** is a collection of super-fast algorithms for geometry processing(Polygon splitting, finding the largest circle in a polygon, etc.)
 
 Features
@@ -60,7 +61,6 @@ Generic containers and utilities
 ................................
 
 * Vector
-* Hashmap
 * SmallObjectAllocator
 
 Basic gometry types and their operatoions

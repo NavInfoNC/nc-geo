@@ -24,21 +24,6 @@ SOFTWARE.
 #include "basic_types.h"
 #include "polyline_tile_splitter.h"
 
-enum LineSplitter::Position
-{
-	Position_none = 0,
-	Position_left = 1,	///< 0001
-	Position_right = 2,	///< 0010
-	Position_top = 8,	///< 1000
-	Position_bottom = 4,	///< 0100
-	Position_topLeft = 9,	///< 1001
-	Position_topRight = 10,	///< 1010
-	Position_bottomLeft = 5,	///< 0101
-	Position_bottomRight = 6		///< 0110
-};
-
-typedef LineSplitter::Position Position;
-
 void getColRowByGridId(GridId gridId, int* xCol, int* yRow)
 {
 	*yRow = (gridId & 0xffff0000) >> 16;
@@ -91,7 +76,7 @@ void LineSplitter::setTileSize(int32 tileSize)
 		m_tileSize = tileSize;
 }
 
-Position LineSplitter::getCrosspoint(GridId gridId, const Point* p1, const Point* p2, Point* pOut)
+LineSplitter::Position LineSplitter::getCrosspoint(GridId gridId, const Point* p1, const Point* p2, Point* pOut)
 {
 	Position code1, code2;
 	Rect rect = getRectByGridId(gridId, m_tileSize);
@@ -101,14 +86,14 @@ Position LineSplitter::getCrosspoint(GridId gridId, const Point* p1, const Point
 	code2 = getRelativeGridPos(newGridId, gridId);
 
 	// p1点在矩形内部，而p2点在矩形外部
-	//CQ_ASSERT(code2 != Position_none);
+	//assert(code2 != Position_none);
 
 	if ((code2 & Position_left) != Position_none) //< 与左边界相交
 	{
 		pOut->x = rect.left;
 		// 三角形相似原理
 		if (p2->x == p1->x){
-			//CQ_ASSERT(FALSE);
+			//assert(FALSE);
 			pOut->y = (p1->y + p2->y) / 2;
 		}
 		else{
@@ -124,7 +109,7 @@ Position LineSplitter::getCrosspoint(GridId gridId, const Point* p1, const Point
 	{
 		pOut->x = rect.right;
 		if (p2->x == p1->x){
-			//CQ_ASSERT(FALSE);
+			//assert(FALSE);
 			pOut->y = (p1->y + p2->y) / 2;
 		}
 		else{
@@ -144,7 +129,7 @@ Position LineSplitter::getCrosspoint(GridId gridId, const Point* p1, const Point
 	{
 		pOut->y = rect.bottom;
 		if (p2->y == p1->y){
-			//CQ_ASSERT(FALSE);
+			//assert(FALSE);
 			pOut->x = (p1->x + p2->x) / 2;
 		}
 		else{
@@ -179,8 +164,8 @@ Position LineSplitter::getCrosspoint(GridId gridId, const Point* p1, const Point
 			, rect.left, rect.top, rect.right, rect.bottom);
 	}
 
-	CQ_ASSERT(code1 != Position_none);
-	CQ_ASSERT(pOut->x >= rect.left && pOut->y >= rect.top && pOut->x <= rect.right && pOut->y <= rect.bottom);
+	assert(code1 != Position_none);
+	assert(pOut->x >= rect.left && pOut->y >= rect.top && pOut->x <= rect.right && pOut->y <= rect.bottom);
 	return code1;
 }
 
@@ -193,7 +178,7 @@ Position LineSplitter::getCrosspoint(GridId gridId, const Point* p1, const Point
 @return
 相对位置关系
 */
-Position LineSplitter::getRelativeGridPos(GridId targetGridId, GridId baseGridId)
+LineSplitter::Position LineSplitter::getRelativeGridPos(GridId targetGridId, GridId baseGridId)
 {
 	int xCol, yRow, newColX, newRowY;
 	Position c = Position_none;
@@ -229,7 +214,7 @@ Position LineSplitter::getRelativeGridPos(GridId targetGridId, GridId baseGridId
 @return
 如果点不在矩形的边缘上, 返回Position_none, 否则返回对应的边或角
 */
-Position LineSplitter::testPointOnEdge(const Point *p, GridId gridId)
+LineSplitter::Position LineSplitter::testPointOnEdge(const Point *p, GridId gridId)
 {
 	Rect rect = getRectByGridId(gridId, m_tileSize);
 	Position c = Position_none;
