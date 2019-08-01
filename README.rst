@@ -2,6 +2,7 @@ NC-GEO
 ======
 
 .. image:: https://travis-ci.com/NavInfoNC/nc-geo.svg?branch=master
+  :target: https://travis-ci.com/NavInfoNC/nc-geo/
 **nc-geo** is a collection of super-fast algorithms for geometry processing(Polygon splitting, finding the largest circle in a polygon, etc.)
 
 Features
