@@ -150,9 +150,6 @@ private:
 	static Allocator* m_instance;
 };
 
-
-// selectany 通知编译器，.h中此变量被多次include时，只保留一份
-// 不过static变量或许不需要
 template<typename T>
 FixedObjectAllocator<T>* FixedObjectAllocator<T>::m_instance = NULL;
 
