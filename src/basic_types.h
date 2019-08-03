@@ -28,7 +28,6 @@ SOFTWARE.
 #	include <stdlib.h>
 #	include <stdio.h>
 #	include <assert.h>
-#	include <malloc.h>
 #	include <math.h>
 #	include <stddef.h>
 #	include <stdarg.h>
